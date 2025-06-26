@@ -29,6 +29,3 @@ def crack_hash(
             return
 
     typer.echo("[-] Failed to crack the hash.")
-
-if __name__ == "__main__":
-    typer.run(crack_hash)
