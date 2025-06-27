@@ -2,6 +2,7 @@ import typer
 
 def show_help():
     typer.echo(r"""
+               
   /$$$$$$  /$$$$$$$$ /$$$$$$$$       /$$$$$$$$ /$$$$$$   /$$$$$$  /$$       /$$   /$$ /$$$$$$ /$$$$$$$$
  /$$__  $$|__  $$__/| $$_____/      |__  $$__//$$__  $$ /$$__  $$| $$      | $$  /$$/|_  $$_/|__  $$__/
 | $$  \__/   | $$   | $$               | $$  | $$  \ $$| $$  \ $$| $$      | $$ /$$/   | $$     | $$
@@ -12,20 +13,30 @@ def show_help():
  \______/    |__/   |__/               |__/   \______/  \______/ |________/|__/  \__/|______/   |__/
 
 
-     CTF Toolkit - Command Reference:
+Available Tools:
+─────────────────────────────────────────────────────────────
+1. crack-hash        Crack hashes using a wordlist
+   --hash      <HASH>         (required)
+   --wordlist  <FILE>         (required)
+   --algo      md5 | sha1 | sha256 (default: sha256)
 
-   crack-hash:
-    --hash       : The hash value to crack
-    --wordlist   : Path to the wordlist file
-    --algo       : Hash algorithm (md5, sha1, sha256)
+2. port-scan         Scan open ports on a target
+   --host      <IP or domain> (required)
+   --start     <start port>   (default: 1)
+   --end       <end port>     (default: 1024)
 
-   port-scan:
-    --host       : Target IP or domain
-    --start      : Start port (default: 1)
-    --end        : End port (default: 1024)
+3. encode-tool       Encode or decode text
+   --text      <TEXT>         (required)
+   --type      base64 | hex | url (required)
+   --decode                    (optional, for decoding)
 
-   Example Usage:
-    python index.py crack-hash --hash <hash> --wordlist wordlist.txt --algo md5
-    python index.py port-scan --host 127.0.0.1 --start 1 --end 100
-    python index.py show-help
+4. help              Show this help message
+
+Examples:
+──────────
+python index.py crack-hash --hash 5d41402abc... --wordlist rockyou.txt --algo md5
+python index.py port-scan --host example.com --start 20 --end 80
+python index.py encode-tool --text "hello" --type base64
+python index.py encode-tool --text "aGVsbG8=" --type base64 --decode
+               
 """)
