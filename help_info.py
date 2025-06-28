@@ -16,20 +16,25 @@ def show_help():
 Available Tools:
 ─────────────────────────────────────────────────────────────
 1. crack-hash        Crack hashes using a wordlist
-   --hash      <HASH>         (required)
-   --wordlist  <FILE>         (required)
-   --algo      md5 | sha1 | sha256 (default: sha256)
+   --hash      <HASH>         (required) The hash to crack 
+   --wordlist  <FILE>         (required) Path to the wordlist file
+   --algo      md5 | sha1 | sha256       hash algorithm to use (default: sha256)
 
 2. port-scan         Scan open ports on a target
-   --host      <IP or domain> (required)
-   --start     <start port>   (default: 1)
-   --end       <end port>     (default: 1024)
+   --host      <IP or domain> (required) Target IP address or domain name
+   --start     <start port>              Start port (default: 1)  
+   --end       <end port>                End port (default: 1024)
 
 3. encode-tool       Encode or decode text
-   --text      <TEXT>         (required)
-   --type      base64 | hex | url (required)
-   --decode                    (optional, for decoding)
-
+   --text      <TEXT>         (required) Text to encode or decode
+   --type      base64 | hex | url        Encoding type (required)
+   --decode                   (optional) Decode instead of encode 
+               
+4. dir-brute         Bruteforce directories on a web target
+   --url       <URL>           (required) Base URl (e.g., http://example.com)
+   --wordlist  <FILE>          (required) Path to the wordlist file                              
+   --status    <CODE>          (optional) HTTP status code to match (default: 200) 
+               
 4. help              Show this help message
 
 Examples:
@@ -38,5 +43,6 @@ python index.py crack-hash --hash 5d41402abc... --wordlist rockyou.txt --algo md
 python index.py port-scan --host example.com --start 20 --end 80
 python index.py encode-tool --text "hello" --type base64
 python index.py encode-tool --text "aGVsbG8=" --type base64 --decode
+python index.py dir-brute --url http://example.com --wordlist comman.txt 
                
 """)
