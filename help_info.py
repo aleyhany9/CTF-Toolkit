@@ -35,6 +35,11 @@ Available Tools:
    --wordlist  <FILE>          (required) Path to the wordlist file                              
    --status    <CODE>          (optional) HTTP status code to match (default: 200) 
                
+5. subdomain-enum    Enumerate subdomains for a domain
+   --domain    <DOMAIN>        (required) Base domain (e.g., example.com)     
+   --wordlist  <File>          (required) Path to subdomain wordlist 
+   --status    <CODE>          (optional) Filter by status code (e.g., 200)                                              
+               
 4. help              Show this help message
 
 Examples:
@@ -44,5 +49,6 @@ python index.py port-scan --host example.com --start 20 --end 80
 python index.py encode-tool --text "hello" --type base64
 python index.py encode-tool --text "aGVsbG8=" --type base64 --decode
 python index.py dir-brute --url http://example.com --wordlist comman.txt 
+python index.py subdomain-enum --domain github.com --wordlist subdomain.txt --status 200               
                
 """)
