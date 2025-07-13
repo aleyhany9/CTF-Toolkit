@@ -5,6 +5,7 @@ from help_info import show_help
 from encode_tool import encode_tool
 from dir_brute import dir_brute
 from subdomain_enum import subdomain_enum
+from dns_lookup import dns_lookup
 
 
 app = typer.Typer()
@@ -16,6 +17,8 @@ app.command("help")(show_help)
 app.command("encode-tool")(encode_tool)
 app.command("dir-brute")(dir_brute)
 app.command("subdomain-enum")(subdomain_enum)
+app.command("dns-lookup")(dns_lookup)
+
 
 if __name__ == "__main__":
     app()

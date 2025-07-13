@@ -1,0 +1,10 @@
+admin
+www
+blog
+uploads
+images
+dev
+mail
+password
+123456
+letmein
