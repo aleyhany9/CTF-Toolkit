@@ -3,3 +3,4 @@ requests==2.32.2
 rich==13.7.1
 dnspython==2.6.1
 paramiko==3.4.0
+whois==0.9.25

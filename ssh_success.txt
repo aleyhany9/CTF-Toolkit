@@ -1,4 +1,0 @@
-demo:password@test.rebex.net:22
-demo:password@test.rebex.net:22
-demo:password@test.rebex.net:22
-demo:password@test.rebex.net:22

@@ -46,14 +46,19 @@ Available Tools:
    --all                       (optional) Get all comman record types
    --save      <FILE>          (optional) save output to a file       
 
-9. ssh-brute         Brute force SSH login using a password list
+7. ssh-brute         Brute force SSH login using a password list
    --host      <IP/Domain>     (required) Target SSH server
    --user      <USERNAME>      (required) Username to brute force
    --wordlist  <FILE>          (required) Password wordlist
    --port      <PORT>          (default: 22)
    --stop                      Stop on first success (default: 22)
                
-8. help              Show this help message
+8. whois-lookup      Perform WHOIS query on a domain
+   --domain    <DOMAIN>        (required) Target domain
+   --save      <FILE>          (optional) Save result to a file
+   --short                     (optional) Show key fields only (domain, registrar, creation, etc.)
+               
+9. help              Show this help message
 
 Examples:
 ──────────
@@ -64,6 +69,10 @@ python index.py encode-tool --text "aGVsbG8=" --type base64 --decode
 python index.py dir-brute --url http://example.com --wordlist comman.txt 
 python index.py subdomain-enum --domain github.com --wordlist subdomain.txt --status 200 
 python index.py dns-lookup --domain github.com --type A
-python index.py dns-lookup --domain github.com --all --save output.txt              
+python index.py dns-lookup --domain github.com --all --save output.txt     
+python index.py ssh-brute --host test.rebex.net --user demo --wordlist wordlist.txt
+python index.py whois-lookup --domain github.com
+python index.py whois-lookup --domain github.com --save github.com    
+python index.py whois-lookup --domain github.com --short
                
 """)
