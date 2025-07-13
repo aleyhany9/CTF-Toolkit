@@ -44,9 +44,16 @@ Available Tools:
    --domain    <DOMAIN>        (required) Target domain (e.g., github.com)
    --type      A | MX | TXT    (optional) Record type (default: A)
    --all                       (optional) Get all comman record types
-   --save      <FILE>          (optional) save output to a file                                                                       
+   --save      <FILE>          (optional) save output to a file       
+
+9. ssh-brute         Brute force SSH login using a password list
+   --host      <IP/Domain>     (required) Target SSH server
+   --user      <USERNAME>      (required) Username to brute force
+   --wordlist  <FILE>          (required) Password wordlist
+   --port      <PORT>          (default: 22)
+   --stop                      Stop on first success (default: 22)
                
-4. help              Show this help message
+8. help              Show this help message
 
 Examples:
 ──────────
