@@ -58,7 +58,12 @@ Available Tools:
    --save      <FILE>          (optional) Save result to a file
    --short                     (optional) Show key fields only (domain, registrar, creation, etc.)
                
-9. help              Show this help message
+9. http-headers      Grab HTTP response headers from a URL
+   --url       <URL>           (required) Target URL (e.g. http://example.com)
+   --save      <FILE>          (optional) Save headers output to a file        
+   --status                    (optional) Show HTTP status code (default: true)     
+               
+1. help              Show this help message
 
 Examples:
 ──────────
@@ -74,5 +79,6 @@ python index.py ssh-brute --host test.rebex.net --user demo --wordlist wordlist.
 python index.py whois-lookup --domain github.com
 python index.py whois-lookup --domain github.com --save github.com    
 python index.py whois-lookup --domain github.com --short
-               
+python index.py http-headers --url http://example.com --save headers.txt 
+python index.py http-headers --url http://example.com --no-status
 """)
