@@ -9,6 +9,7 @@ from dns_lookup import dns_lookup
 from ssh_brute import ssh_brute
 from whois_lookup import whois_lookup
 from http_headers import http_headers
+from admin_finder import admin_finder
 
 
 app = typer.Typer()
@@ -24,6 +25,7 @@ app.command("dns-lookup")(dns_lookup)
 app.command("ssh-brute")(ssh_brute)
 app.command("whois-lookup")(whois_lookup)
 app.command("http-headers")(http_headers)
+app.command("admin-finder")(admin_finder)
 
 
 if __name__ == "__main__":

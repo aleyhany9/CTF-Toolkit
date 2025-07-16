@@ -61,9 +61,15 @@ Available Tools:
 9. http-headers      Grab HTTP response headers from a URL
    --url       <URL>           (required) Target URL (e.g. http://example.com)
    --save      <FILE>          (optional) Save headers output to a file        
-   --status                    (optional) Show HTTP status code (default: true)     
+   --status                    (optional) Show HTTP status code (default: true)   
+
+10.admin-finder      Scan for hidden admin panels
+   --url       <URL>           (required) Target base URL
+   --wordlist  <FILE>          (required) Wordlist of admin paths
+   --status    <CODE>          (optional) Filter by HTTP status code
+   --save      <FILE>          (optional) Save results to a file               
                
-1. help              Show this help message
+12.help              Show this help message
 
 Examples:
 ──────────
@@ -81,4 +87,6 @@ python index.py whois-lookup --domain github.com --save github.com
 python index.py whois-lookup --domain github.com --short
 python index.py http-headers --url http://example.com --save headers.txt 
 python index.py http-headers --url http://example.com --no-status
-""")
+python index.py admin-finder --url http://testphp.vulnweb.com --wordlist admin.txt
+python index.py admin-finder --url http://testphp.vulnweb.com --wordlist admin.txt --status 200 --save found.txt
+""") 

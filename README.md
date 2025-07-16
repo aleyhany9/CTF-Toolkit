@@ -15,6 +15,7 @@ A simple and modular command-line toolkit built with **Typer** for ethical hacki
 -  **SSH Brute Force** – Tries credentials from a wordlist  
 -  **Encoder/Decoder** – Supports Base64, Hex, and URL encode/decode  
 -  **HTTP Header Grabber** – Fetches and saves response headers  
+-  **Admin finder** – Scan for comman admin panel paths using a wordlist
 
 ---
 
